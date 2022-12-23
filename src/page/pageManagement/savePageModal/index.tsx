@@ -1,4 +1,4 @@
-import { Button, Form, Input, Modal, TreeSelect } from "antd";
+import { Button, Form, Input, Modal, Radio, TreeSelect } from "antd";
 import { FC, memo, useEffect } from "react";
 import { SavePageModalProps } from "./props";
 
@@ -6,8 +6,7 @@ const SavePageModal: FC<SavePageModalProps> = ({ treeData, formdata, onFinish, o
     const [form] = Form.useForm();
     useEffect(() => {
         form.resetFields()
-    }, [formdata, treeData, form])
-
+    }, [formdata, treeData, form, open])
 
     return (
         <>
@@ -37,6 +36,40 @@ const SavePageModal: FC<SavePageModalProps> = ({ treeData, formdata, onFinish, o
                         name="pagePath"
                     >
                         <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="页面描述"
+                        name="description"
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="图标"
+                        name="icon"
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="子项是否为tab"
+                        name="tabChildren"
+                    >
+                        <Radio.Group defaultValue={false}>
+                            <Radio value={false}>否</Radio>
+                            <Radio value={true}>是</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+
+                    <Form.Item
+                        label="页面类型"
+                        name="pageType"
+                    >
+                        <Radio.Group defaultValue={'STAFF'}>
+                            <Radio value={'STAFF'}>各部门页面</Radio>
+                            <Radio value={'SYSTEM_ADMIN'}>系统管理员页面</Radio>
+                        </Radio.Group>
                     </Form.Item>
 
                     <Form.Item

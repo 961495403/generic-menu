@@ -2,10 +2,14 @@ export interface IPageProps {
     id:string;
     name:string;
     parent:string;
+    icon?:string;
+    tabChildren?:boolean;
+    description?:string;
     url:string;
     pagePath:string;
     children:IPageProps[]|undefined;
-    permissions?: IPagePermissionProps[]
+    permissions?: IPagePermissionProps[];
+    pageType?:string;
 }
 
 export interface IPagePermissionProps {

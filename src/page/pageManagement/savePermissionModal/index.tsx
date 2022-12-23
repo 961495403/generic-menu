@@ -6,7 +6,7 @@ const SavePermissionModal: React.FC<SavePermissionModalProps> = ({ formData, ope
     const [form] = Form.useForm();
     useEffect(() => {
         form.resetFields()
-    }, [formData, form])
+    }, [formData, form, open])
 
     const typeOption = [
         {

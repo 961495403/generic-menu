@@ -30,7 +30,6 @@ const PageConfig: React.FC = () => {
                         () => {
                             setOpenSavePageModal(true)
                             setPageFormdata(undefined)
-                      
                         }
                     } type="primary">
                         新建页面
@@ -39,14 +38,12 @@ const PageConfig: React.FC = () => {
                     <Button className={style.button} type="primary" danger onClick={
                         () => {
                             onDeletePage()
-                            setPageFormdata(undefined)
                         }
                     } hidden={!pageFormdata}>
                         删除页面
                     </Button>
                     <Button className={style.button} onClick={
                         () => {
-                            setPermissionFormdata(undefined)
                             setOpenSavePermissionModal(true)
                         }
                     } type="primary" hidden={!pageFormdata}>
@@ -59,7 +56,6 @@ const PageConfig: React.FC = () => {
                         onFinish={onSavePage}
                         onCancel={() => {
                             setOpenSavePageModal(false)
-                            setPageFormdata(undefined)
                         }}
                         treeData={page}
                         formdata={pageFormdata}
@@ -69,7 +65,6 @@ const PageConfig: React.FC = () => {
                     <SavePermissionModal 
                         onFinish={onSavePermission}
                         onCancel={() => {
-                            setPermissionFormdata(undefined)
                             setOpenSavePermissionModal(false)
                         }}
                         formData={permissionFormdata}

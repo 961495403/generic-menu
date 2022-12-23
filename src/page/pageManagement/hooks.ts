@@ -36,6 +36,7 @@ export const useAction = () => {
         manual: true,
         onSuccess: (result) => {
             getPageTreeRequest.run()
+            setOpenSavePageModal(false)
         }
     })
 
@@ -43,6 +44,7 @@ export const useAction = () => {
         manual: true, 
         onSuccess: () => {
             getPageTreeRequest.run()
+            setOpenSavePageModal(false)
         }
     })
 
@@ -123,7 +125,6 @@ export const useAction = () => {
         } else {
             addPageRequest.run(data)
         }
-        setOpenSavePageModal(false)
     };
 
     const onDeletePage = () => {

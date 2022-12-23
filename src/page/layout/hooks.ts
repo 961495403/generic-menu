@@ -28,7 +28,7 @@ export const useAction = () => {
   const itemIcon = (name: string) => React.createElement((Icon as any)[name]);
 
   const generateMenuItem = (data: IUserMenuProps[]): MenuItem[] => {
-    return data.map(item => getItem(item.menuName, item.url, item.icon ? itemIcon(item.icon) : null, item.children ? generateMenuItem(item.children) : undefined))
+    return data.map(item => getItem(item.menuName, item.url, null, item.children ? generateMenuItem(item.children) : undefined))
   }
 
   const getUserMenuRequest = useRequest(getUserMenuApi, {

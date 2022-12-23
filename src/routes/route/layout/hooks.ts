@@ -43,9 +43,6 @@ export const useAction = () => {
         manual: true,
         onSuccess: (result) => {
             const userRouteProps = getRouteProps(result);
-            // userRouteProps.forEach(item => {
-            //     root[0].children?.push(item)
-            // })
             const route = getRoutes(userRouteProps)
             setPage(route)
         }
